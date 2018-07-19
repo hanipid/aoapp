@@ -8,12 +8,11 @@
     <ul class="nav navbar-nav">
       {%- set menus = [
         'Home': null,
-        'Users': 'users',
-        'Profiles': 'profiles',
-        'Permissions': 'permissions',
-        'AO': [
-          'index': 'ao',
-          'mutasi': ['mutasi': 'ao/mutasi']
+        'AO': 'ao',
+        'Settings': [
+          'Users': 'users',
+          'Profiles': 'profiles',
+          'Permissions': 'permissions'
         ]
       ] -%}
 

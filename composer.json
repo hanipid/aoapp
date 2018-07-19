@@ -25,7 +25,8 @@
         "php": ">=5.5",
         "ext-phalcon": "~3.0",
         "swiftmailer/swiftmailer": "^5.4",
-        "aws/aws-sdk-php": "~3.0"
+        "aws/aws-sdk-php": "~3.0",
+        "phpoffice/phpspreadsheet": "^1.3"
     },
     "require-dev": {
         "phalcon/dd": "~1.1.0"

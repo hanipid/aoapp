@@ -4,6 +4,7 @@
 
 <div class="my-2">
 	<a href="{{ url('ao/create') }}" class="btn btn-primary btn-sm">Tambah Pegawai</a>
+	<a href="{{ url('export') }}" class="btn btn-primary btn-sm float-right">Export</a>
 </div>
 
 <table class="table border table-sm" id="myTable">
