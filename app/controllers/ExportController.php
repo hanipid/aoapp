@@ -91,6 +91,20 @@ class ExportController extends ControllerBase
 		        'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
 		        'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
 		    ],
+		    'borders' => [
+		        'top' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+			    ],
+		        'bottom' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+			    ],
+		        'left' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+			    ],
+		        'right' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+			    ],
+		    ],
 		];
 		$spreadsheet->getDefaultStyle()->applyFromArray($styleArray);
 		$spreadsheet->getActiveSheet()->getStyle('A2:G5')
@@ -156,6 +170,34 @@ class ExportController extends ControllerBase
 				$spreadsheet->getActiveSheet()->getStyle('A'.$i.':G'.$i)
 				->getFill()->setFillType(Fill::FILL_SOLID)
 				->getStartColor()->setARGB($yellow);
+				$spreadsheet->getActiveSheet()->getStyle('A'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('A'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('B'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('B'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('C'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('C'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('D'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('D'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('E'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('E'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('F'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('F'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('G'.($i-1))
+				    ->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+				$spreadsheet->getActiveSheet()->getStyle('G'.($i-1))
+				    ->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
 				$j++;
 			}
 
@@ -220,6 +262,10 @@ class ExportController extends ControllerBase
 		$spreadsheet->getActiveSheet()->getStyle('A'.($i).':G'.($i))
 		->getFill()->setFillType(Fill::FILL_SOLID)
 		->getStartColor()->setARGB($gray_blue);
+		$spreadsheet->getActiveSheet()->getStyle('A'.($i))
+		->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+		$spreadsheet->getActiveSheet()->getStyle('B'.($i))
+		->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
 
 		$spreadsheet->setActiveSheetIndex(0)
 		->setCellValue(('A').($i+=1), "TOTAL JUMLAH AO KANCA")
@@ -231,6 +277,10 @@ class ExportController extends ControllerBase
 		$spreadsheet->getActiveSheet()->getStyle('A'.($i).':G'.($i))
 		->getFill()->setFillType(Fill::FILL_SOLID)
 		->getStartColor()->setARGB($yellow);
+		$spreadsheet->getActiveSheet()->getStyle('A'.($i))
+		->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+		$spreadsheet->getActiveSheet()->getStyle('B'.($i))
+		->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
 
 		$spreadsheet->setActiveSheetIndex(0)
 		->setCellValue(('A').($i+=1), "TOTAL JUMLAH AO")
@@ -242,6 +292,10 @@ class ExportController extends ControllerBase
 		$spreadsheet->getActiveSheet()->getStyle('A'.($i).':G'.($i))
 		->getFill()->setFillType(Fill::FILL_SOLID)
 		->getStartColor()->setARGB($green);
+		$spreadsheet->getActiveSheet()->getStyle('A'.($i))
+		->getBorders()->getRight()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
+		$spreadsheet->getActiveSheet()->getStyle('B'.($i))
+		->getBorders()->getLeft()->setBorderStyle(\PhpOffice\PhpSpreadsheet\Style\Border::BORDER_NONE);
 
 		$spreadsheet->setActiveSheetIndex(0)
 		->setCellValue(('B').($i+=1), "KETERANGAN :")
@@ -254,6 +308,23 @@ class ExportController extends ControllerBase
 		$spreadsheet->getActiveSheet()->getStyle('B'.($i))
 		->getFill()->setFillType(Fill::FILL_SOLID)
 		->getStartColor()->setARGB($orange);
+		$styleArray2 = [
+		    'borders' => [
+		        'top' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+			    ],
+		        'bottom' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+			    ],
+		        'left' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+			    ],
+		        'right' => [
+			        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+			    ],
+		    ],
+		];
+		$spreadsheet->getActiveSheet()->getStyle('B'.$i.':E'.($i+5))->applyFromArray($styleArray2);
 
 		$spreadsheet->setActiveSheetIndex(0)
 		->mergeCells(('C'.$i.':E'.$i))
@@ -264,6 +335,7 @@ class ExportController extends ControllerBase
 		$spreadsheet->getActiveSheet()->getStyle('C'.($i-1).':E'.($i))
 		->getFill()->setFillType(Fill::FILL_SOLID)
 		->getStartColor()->setARGB($green);
+		$spreadsheet->getActiveSheet()->getStyle('E'.$i)->getAlignment()->setWrapText(true);
 
 		$spreadsheet->setActiveSheetIndex(0)
 		->setCellValue(('B'.$i+=1), "TOTAL KANWIL")
